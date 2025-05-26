@@ -255,6 +255,7 @@ class Application(tk.Frame):
             self.result_label.config(text=f"Error: {str(e)}", foreground='red')
 
 app = Application()
+app.master.iconbitmap('knife.ico')
 app.master.geometry('1000x600')
 app.master.title('Bonzieped')
 app.mainloop()
