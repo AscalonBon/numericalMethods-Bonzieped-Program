@@ -174,21 +174,7 @@ class Application(tk.Frame):
         self.tree.column("col2", width=120)
         self.tree.column("col3", width=120)
         self.tree.column("col4", width=120)
-        
-        self.update_input_labels()
-        
-        Label(left_panel, text="Example equations:").pack(anchor=W)
-        self.example_equations = [
-            "x^3 - 2x - 5",          # Using ^ and implicit multiplication
-            "x^2 - 2",               # Square root of 2
-            "3x^4 - 76x^2 + 448",    # Your polynomial with ^
-            "exp(x) - 2",            # Natural log of 2
-            "(x+2)(x-1)^2"           # Parentheses and exponents
-        ]
-        self.example_var = tk.StringVar(value=self.example_equations[0])
-        example_menu = OptionMenu(left_panel, self.example_var, *self.example_equations, command=self.load_example)
-        example_menu.pack(anchor=W, pady=5, fill=X)
-        
+              
     def load_example(self, equation):
         self.inputExpr.delete(0, END)
         self.inputExpr.insert(0, equation)
@@ -269,7 +255,6 @@ class Application(tk.Frame):
             self.result_label.config(text=f"Error: {str(e)}", foreground='red')
 
 app = Application()
-app.master.iconbitmap('knife.ico')
 app.master.geometry('1000x600')
 app.master.title('Bonzieped')
 app.mainloop()
