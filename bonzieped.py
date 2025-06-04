@@ -554,5 +554,6 @@ class Application(tk.Frame):
 app = Application()
 # Increased overall window size
 app.master.geometry('1200x800')
+app.master.iconbitmap('knife.ico')
 app.master.title('Bonzieped')
 app.mainloop()
